@@ -1,0 +1,742 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: #292929;
+    font-family: 'DM Sans', Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+a:hover {
+    color: #ad2d24;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    background: #fff;
+}
+
+/* Faixa superior de contato */
+
+.top {
+    order: 0;
+    width: 100%;
+    height: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #ae2b22;
+    color: white;
+
+    padding: 0 max(calc((100% - 1180px) / 2), 25px);
+    font-size: 11px;
+}
+
+/* Nome do professor */
+
+.logo {
+    order: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 12px 20px 12px 25px;
+    line-height: 1.2;
+}
+
+.logo strong {
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+}
+
+.logo small {
+    color: #ad2d24;
+    letter-spacing: 4px;
+    margin-top: 5px;
+    font-size: 9px;
+}
+
+/* Botão do menu para celular */
+
+.hamb {
+    display: none;
+    order: 2;
+}
+
+/* Navegação principal */
+
+nav {
+    order: 3;
+
+    display: flex;
+    flex: 1;
+
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+nav > a,
+.navgroup > a {
+    display: block;
+    padding: 14px 9px;
+
+    font-size: 9px;
+    font-weight: 700;
+    white-space: nowrap;
+
+    color: #333;
+}
+
+nav a:hover {
+    color: #ad2d24;
+}
+
+/* Menus suspensos */
+
+.navgroup {
+    position: relative;
+}
+
+.drop {
+    display: none;
+
+    position: absolute;
+    z-index: 20;
+
+    top: 100%;
+    left: 0;
+
+    min-width: 230px;
+
+    background: white;
+    box-shadow: 0 8px 20px #0002;
+    border-top: 3px solid #ad2d24;
+}
+
+.drop a {
+    display: block;
+    padding: 11px 15px;
+    font-size: 12px;
+    color: #333;
+}
+
+.drop a:hover {
+    background: #f5f5f5;
+    color: #ad2d24;
+}
+
+.navgroup:hover .drop,
+.navgroup:focus-within .drop {
+    display: block;
+}
+
+/* Redes sociais no cabeçalho */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+}
+
+.social-links a {
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    color: #333;
+}
+
+.social-links a:hover {
+    color: #ad2d24;
+}
+
+
+/* ========================================
+   FAIXA DE PENSADORES
+======================================== */
+
+.ticker {
+    display: none;
+}
+
+
+/* ========================================
+   BANNER PRINCIPAL
+======================================== */
+
+.hero {
+    height: 440px;
+    position: relative;
+    overflow: hidden;
+    background: #222;
+}
+
+.hero > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-caption {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: white;
+    text-shadow: 0 2px 8px #000;
+}
+
+.hero-caption p {
+    letter-spacing: 4px;
+}
+
+.hero-caption h1 {
+    font: 700 40px 'Playfair Display', serif;
+    max-width: 490px;
+}
+
+.slide-prev,
+.slide-next {
+    position: absolute;
+    top: 48%;
+
+    border: 0;
+    background: #0005;
+    color: white;
+
+    font-size: 34px;
+    width: 42px;
+    height: 50px;
+
+    cursor: pointer;
+}
+
+.slide-prev {
+    left: 20px;
+}
+
+.slide-next {
+    right: 20px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+
+    display: flex;
+    gap: 9px;
+}
+
+.dots i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #fff8;
+}
+
+.dots i:first-child {
+    background: white;
+}
+
+
+/* ========================================
+   PRÉVIA DA BIOGRAFIA
+======================================== */
+
+.bio-preview {
+    max-width: 1060px;
+    margin: 58px auto 80px;
+
+    display: grid;
+    grid-template-columns: 1.35fr 0.9fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.bio-text h1,
+.inner-page h1 {
+    font: 700 54px 'Playfair Display', Georgia, serif;
+    margin: 0 0 18px;
+}
+
+.redline {
+    height: 6px;
+    background: linear-gradient(90deg, #ad2d24 80px, #eee 80px);
+    margin-bottom: 18px;
+}
+
+.bio-text p,
+.inner-page p {
+    font: 16px/1.35 Georgia, serif;
+    text-align: justify;
+}
+
+.bio-text .muted {
+    color: #858585;
+}
+
+.bio-photo img {
+    width: 100%;
+    max-height: 370px;
+    object-fit: cover;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.outline {
+    display: inline-block;
+
+    border: 1px solid #777;
+    padding: 17px 45px;
+
+    background: white;
+    color: #111;
+
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.outline:hover {
+    background: #ad2d24;
+    color: white;
+    border-color: #ad2d24;
+}
+
+
+/* ========================================
+   CARDS DA PÁGINA INICIAL
+======================================== */
+
+.feature-cards {
+    max-width: 1080px;
+    margin: 0 auto 65px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.feature {
+    border: 1px solid #ccc;
+    min-height: 330px;
+
+    text-align: center;
+    padding: 32px 14px;
+
+    color: #292929;
+}
+
+.feature:hover {
+    border-color: #222;
+}
+
+.feature b {
+    font-size: 65px;
+    color: #ad2d24;
+
+    display: block;
+    line-height: 1.2;
+}
+
+.feature h2 {
+    font: 700 29px Georgia, serif;
+    margin: 28px 0;
+}
+
+.feature i {
+    display: block;
+
+    width: 80px;
+    height: 5px;
+
+    background: #ad2d24;
+    margin: 0 auto 30px;
+}
+
+.feature p {
+    font-size: 13px;
+    color: #777;
+
+    max-width: 290px;
+    margin: auto;
+}
+
+
+/* ========================================
+   FAIXA DE CONTATO
+======================================== */
+
+.contact-strip {
+    text-align: center;
+    background: #f5f5f5;
+
+    padding: 55px 20px;
+    margin-top: 40px;
+}
+
+.contact-strip h2 {
+    font: 700 32px Georgia, serif;
+}
+
+
+/* ========================================
+   PÁGINAS INTERNAS
+======================================== */
+
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
+.inner-page {
+    max-width: 1060px;
+    min-height: 570px;
+
+    margin: 55px auto 90px;
+}
+
+.bio-page {
+    display: grid;
+    grid-template-columns: 1.35fr 0.9fr;
+    gap: 30px;
+}
+
+.bio-page img {
+    width: 100%;
+    max-height: 370px;
+    object-fit: cover;
+}
+
+.page-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.page-links a {
+    padding: 20px;
+    border: 1px solid #ddd;
+    color: #292929;
+}
+
+.page-links a:hover {
+    border-color: #ad2d24;
+    color: #ad2d24;
+}
+
+
+/* ========================================
+   PÁGINA DE CONTATO
+======================================== */
+
+.contact-page {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 35px;
+}
+
+.contact-page form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.contact-page label {
+    font-size: 13px;
+}
+
+.contact-page input,
+.contact-page textarea {
+    display: block;
+    width: 100%;
+
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+
+    font: 14px Arial;
+}
+
+.contact-page .wide {
+    grid-column: 1 / -1;
+}
+
+.contact-page button {
+    justify-self: start;
+    cursor: pointer;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 35px;
+
+    color: #a72b22;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    background: #222;
+    color: #bbb;
+
+    text-align: center;
+    padding: 25px;
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   ANIMAÇÕES DE ENTRADA
+======================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(32px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 1100px) {
+    .logo {
+        padding-left: 15px;
+        padding-right: 10px;
+    }
+
+    .logo strong {
+        font-size: 14px;
+    }
+
+    nav > a,
+    .navgroup > a {
+        padding: 12px 6px;
+        font-size: 8px;
+    }
+
+    .social-links {
+        gap: 6px;
+        padding: 0 8px;
+    }
+
+    .social-links a {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 850px) {
+    .header {
+        display: flex;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .hamb {
+        display: block;
+        order: 2;
+
+        margin: 0 15px;
+
+        background: white;
+        border: 1px solid #ddd;
+        padding: 8px 16px;
+
+        cursor: pointer;
+    }
+
+    nav {
+        display: none;
+        order: 3;
+
+        flex: 0 0 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav > a,
+    .navgroup > a {
+        font-size: 11px;
+        padding: 12px 20px;
+        border-top: 1px solid #eee;
+    }
+
+    .drop {
+        position: static;
+        box-shadow: none;
+        border-top: 0;
+        background: #f7f7f7;
+        padding-left: 15px;
+    }
+
+    .navgroup:hover .drop {
+        display: none;
+    }
+
+    .navgroup.expanded .drop {
+        display: block;
+    }
+
+    .social-links {
+        padding: 12px 20px;
+        border-top: 1px solid #eee;
+    }
+
+    .social-links a {
+        font-size: 12px;
+    }
+
+    .bio-preview,
+    .inner-page {
+        width: 90%;
+    }
+
+    .feature-cards {
+        width: 90%;
+        gap: 15px;
+    }
+
+    .feature h2 {
+        font-size: 22px;
+    }
+}
+
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 650px) {
+    .top {
+        padding: 6px 12px;
+        height: auto;
+        display: block;
+    }
+
+    .top span {
+        display: block;
+    }
+
+    .logo strong {
+        font-size: 16px;
+    }
+
+    .logo small {
+        font-size: 8px;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero-caption h1 {
+        font-size: 28px;
+    }
+
+    .bio-preview,
+    .bio-page {
+        grid-template-columns: 1fr;
+        margin: 38px auto 50px;
+    }
+
+    .bio-text h1,
+    .inner-page h1 {
+        font-size: 38px;
+    }
+
+    .bio-photo {
+        order: -1;
+    }
+
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .feature {
+        min-height: 260px;
+    }
+
+    .inner-page {
+        margin: 40px auto;
+    }
+
+    .page-links,
+    .contact-page,
+    .contact-page form {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-page .wide {
+        grid-column: auto;
+    }
+}
